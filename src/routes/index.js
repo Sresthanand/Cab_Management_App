@@ -6,6 +6,7 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route exact path="" element ={<Home/>}/>
+        <Route exact path="/:rides" element ={<Home/>}/>
       </Routes>
     </BrowserRouter>
   );

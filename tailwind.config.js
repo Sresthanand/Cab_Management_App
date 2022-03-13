@@ -8,6 +8,10 @@ module.exports={
             },
             height:{
                 "1/10" : "10%"
+            },
+            textColor:{
+                "app-grey" : "#D0CBCB"
+
             }
         },
 
