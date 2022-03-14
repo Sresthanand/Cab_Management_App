@@ -12,8 +12,19 @@ export const populateDistances = (rides, userStation) => {
 };
 
 export const sortDistances = (rides) => {
-    rides.sort(function(a, b) {
-        return (a.distance) - (b.distance);
-    });
-    return rides;
+  rides.sort(function (a, b) {
+    return a.distance - b.distance;
+  });
+  return rides;
+};
+
+export const removeDuplicateRides = (rides) => {
+  for (let i = 0; i < rides.length; i++) {
+    for (let j = i + 1; j < rides.length; j++) {
+      if (rides[j] == rides[i]) {
+        rides = rides.slice(0, j).concat(rides.slice(j + 1, rides.length));
+      }
+    }
+  }
+  return rides;
 };
