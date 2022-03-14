@@ -4,7 +4,8 @@ module.exports={
     theme: {
         extend: {
             backgroundColor:{
-                  "app-black" : "#101010"
+                  "app-black" : "#101010",
+                  "card-black":"#171717"
             },
             height:{
                 "1/10" : "10%"
