@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { cities } from "../utils/appConstants";
 import { useState } from "react";
 
-export default function OptionsBar({ rides }) {
-  const [selectedState, setSelectedState] = useState("");
-  const [selectCity, setSelectedCity] = useState("");
+export default function OptionsBar({
+  rides,
+  selectedState,
+  setSelectedState,
+  selectCity,
+  setSelectedCity,
+}) {
   const [showFilters, setShowFilters] = useState(false);
 
   return (
@@ -38,12 +42,12 @@ export default function OptionsBar({ rides }) {
         </span>
         <span>Filters</span>
         {showFilters && (
-
-          <div 
-          onClick={(e)=>{
-                  e.stopPropagation()
-          }}
-          className=" bg-black absolute bottom-0 right-0 transform -translate-x-5 translate-y-full p-3 rounded-lg text-black w-1/6">
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            className=" bg-black absolute bottom-0 right-0 transform -translate-x-5 translate-y-full p-3 rounded-lg text-black w-1/6"
+          >
             <div className="text-app-grey">Filters</div>
             <hr className="text-app-grey my-3" />
             <div className="my-3">
@@ -52,6 +56,7 @@ export default function OptionsBar({ rides }) {
                 value={selectedState}
                 onChange={(e) => {
                   setSelectedState(e.target.value);
+                  setSelectedCity("")
                 }}
                 className="bg-app-black text-white w-full"
               >
