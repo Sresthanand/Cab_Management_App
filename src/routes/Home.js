@@ -3,7 +3,13 @@ import OptionsBar from "../components/OptionsBar";
 import { useParams } from "react-router-dom";
 import RideCard from "../components/RideCard";
 import { useState, useEffect, useMemo } from "react";
-import { populateDistances, sortDistances,removeDuplicateRides } from "../utils/helpers";
+import {
+  populateDistances,
+  sortDistances,
+  removeDuplicateRides,
+} from "../utils/helpers";
+
+
 
 export default function Home() {
   const { rides } = useParams();
@@ -23,7 +29,7 @@ export default function Home() {
     const filteredList = rideDetails.filter((ride) => {
       let rideDate = new Date(ride.date);
       let currDate = Date.now();
-      
+
       return (
         rides === "nearest" ||
         (rides === "upcoming" && rideDate > currDate) ||
@@ -32,8 +38,11 @@ export default function Home() {
     });
     return filteredList;
   }, [rideDetails, rides]);
- 
-  const arr = useMemo(()=> removeDuplicateRides(filterRideDetails),[filterRideDetails])
+
+  const arr = useMemo(
+    () => removeDuplicateRides(filterRideDetails),
+    [filterRideDetails]
+  );
 
   return (
     <div className="w-screen h-screen bg-app-black overflow-auto">

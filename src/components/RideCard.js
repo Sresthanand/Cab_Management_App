@@ -10,7 +10,7 @@ export default function RideCard({ details }) {
     map_url,
     state,
     city,
-    distance
+    distance,
   } = details;
 
   return (
@@ -43,10 +43,13 @@ export default function RideCard({ details }) {
       </div>
 
       <div className="w-1/2 flex justify-end h-8">
+        <span className="mr-3 bg-black rounded-3xl px-7 flex items-center">
+          {state}
+        </span>
 
-        <span className="mr-3 bg-black rounded-3xl px-7 flex items-center">{state}</span>
-
-        <span className="mr-3 bg-black rounded-3xl px-7 flex items-center" >{city}</span>
+        <span className="mr-3 bg-black rounded-3xl px-7 flex items-center">
+          {city}
+        </span>
       </div>
     </div>
   );
