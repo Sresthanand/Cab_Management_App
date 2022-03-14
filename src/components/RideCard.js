@@ -10,6 +10,7 @@ export default function RideCard({ details }) {
     map_url,
     state,
     city,
+    distance
   } = details;
 
   return (
@@ -36,7 +37,8 @@ export default function RideCard({ details }) {
           {date}
         </div>
         <div>
-          <span className="text-app-grey">Distance : 0</span>
+          <span className="text-app-grey">Distance : </span>
+          {distance}
         </div>
       </div>
 
